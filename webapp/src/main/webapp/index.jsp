@@ -1,5 +1,2 @@
 Hello, World!
-It's ok
-Hi
-
-OK
+Welcome to Tomcat Testing.
