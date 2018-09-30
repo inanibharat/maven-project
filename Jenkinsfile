@@ -14,9 +14,11 @@ pipeline {
                       echo "Archive Artifact"
                       archiveArtifacts '**/*.war'
                       echo "Publish Unit Result"
+                      junit '**/target/surefire-reports/*.xml'
+                      checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
                       checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/target/surefire-reports/*.xml', unHealthy: ''
                     }
-              }
+               }
             }
         }
 }
