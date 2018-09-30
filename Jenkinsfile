@@ -19,10 +19,16 @@ pipeline {
                       
                     }
                }
-               
-                   build 'prod'
-                   input 'Do you want to proceed?'
-               
+            stage ('deploy-prod'){
+                steps { 
+                    timeout(time: 90, unit: 'SECONDS') {
+                       input 'Do you want to proceed?'
+                    }
+                    build 'prod'
+                }
             }
+                   
+               
+            
         }
 }
