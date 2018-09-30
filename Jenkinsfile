@@ -19,6 +19,10 @@ pipeline {
                       
                     }
                }
+               post {
+                   build 'prod'
+                   input 'Do you want to proceed?'
+               }
             }
         }
 }
