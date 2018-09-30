@@ -5,7 +5,7 @@ pipeline {
         maven 'Maven'
     }
         stages {
-            stage ('Build')
+            stage ('Build') {
               steps {
                   sh 'mvn clean package checkstyle:checkstyle'
               }
@@ -17,5 +17,6 @@ pipeline {
                       checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/target/surefire-reports/*.xml', unHealthy: ''
                     }
               }
+            }
         }
 }
