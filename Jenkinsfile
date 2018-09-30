@@ -1,8 +1,8 @@
 pipline {
     agent any
     tools {
-        jdk 'jdk8'
-        maven 'maven'
+        jdk 'JDK8'
+        maven 'Maven'
     }
         stages {
             stage ('Build')
